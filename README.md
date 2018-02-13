@@ -2,7 +2,7 @@
 
 This repo is based on the Gruntfile [here](https://github.com/mathjax/MathJax-grunt-cleaner) and the guidance [here](https://github.com/mathjax/MathJax-docs/wiki/Guide:-reducing-size-of-a-mathjax-installation/1814429ed1e97bfb7675c0fd400804baa9287249). It's a good idea to read those pages before using this tool.
 
-You'd use this repo for quickly generating a customised, stripped-down version of Mathjax for offline use. You customise what is going to be left in your offline version, and the Grunt script discards everything else.
+You'd use this repo for quickly generating a customised, stripped-down version of MathJax for offline use. You customise what is going to be left in your offline version, and the Grunt script discards everything else.
 
 ## Usage
 
@@ -10,10 +10,10 @@ You'd use this repo for quickly generating a customised, stripped-down version o
 
 If you're happy to use the offline version we've created for TeX input with SVG output, unzip `mini-mathjax.zip` and place these contents into your own `mathjax` or similar folder:
 
-    - `extensions`
-    - `jax`
-    - `MathJax.js`
-    - `LICENSE`
+- `extensions`
+- `jax`
+- `MathJax.js`
+- `LICENSE`
 
 ### Customise your MathJax package
 
