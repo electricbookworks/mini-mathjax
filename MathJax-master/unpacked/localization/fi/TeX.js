@@ -18,7 +18,7 @@
  *
  */
 MathJax.Localization.addTranslation("fi","TeX",{
-        version: "2.7.3",
+        version: "2.7.5",
         isLoaded: true,
         strings: {
 

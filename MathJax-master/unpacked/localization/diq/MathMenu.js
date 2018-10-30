@@ -18,7 +18,7 @@
  *
  */
 MathJax.Localization.addTranslation("diq","MathMenu",{
-        version: "2.7.3",
+        version: "2.7.5",
         isLoaded: true,
         strings: {
           Show: "Zey tebir\u00EA matematik\u00EAni b\u0131mocne",
