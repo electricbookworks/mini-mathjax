@@ -8,18 +8,24 @@ You'd use this repo for quickly generating a customised, stripped-down version o
 
 ### Use as is
 
-If you're happy to use the offline version we've created for TeX input with SVG output, unzip `mini-mathjax.zip` and place these contents into your own `mathjax` or similar folder:
+If you're happy to use the offline version we've created for TeX input with SVG output, unzip `build.zip` and place these contents into your own `mathjax` or similar folder:
 
 - `extensions`
 - `jax`
 - `MathJax.js`
 - `LICENSE`
 
+We've done this in the `build` folder here for demo purposes. You can see that in action [here](https://electricbookworks.github.io/mini-mathjax).
+
+You'll also need to add a MathJax config to your page (as a Javascript object). See `index.html` here for an example. Note that the config script element appears before the link to `MathJax.js`.
+
 ### Customise your MathJax package
 
 If you want a different offline package:
 
-1. You must have Grunt installed. To do this, start by updating npm:
+1. You must have Grunt installed. If you don't yet, follow the [official instructions](https://gruntjs.com/getting-started). Or:
+
+    start by updating npm:
 
     ```
     npm update -g npm
@@ -31,10 +37,16 @@ If you want a different offline package:
     npm install -g grunt-cli
     ```
 
-    Even better, follow the [official instructions](https://gruntjs.com/getting-started).
+1. Open this folder in a terminal and run `npm install` to install the necessary `node_modules`.
+1. The master version of MathJax is tracked as a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in this repo. To get the files, run `git submodule init && git submodule update` in this folder. That will clone the latest version of MathJax into the `MathJax-master` folder. In future, to update the MathJax files, `cd MathJax-master && git fetch && git merge`.
+1. Copy into the root of this repo *only* these from `MathJax-master`:
 
-2. Open this folder in a terminal and run `npm install` to install the necessary `node_modules`.
-1. The `MathJax-master` folder contains a full copy of MathJax for convenience. You may want to update it from `https://github.com/mathjax/MathJax/archive/master.zip`, in case there have been changes to the original MathJax repo.
-1. Copy *only* the folders in `MathJax-master` and the `MathJax.js` and `LICENSE` files into the root of this repo. (Some of the files have the same names as ones we need here, such as `package.json` and `README.md`. Don't overwrite those! This is also why we have edited the list under `notcode` in the Gruntfile, or we'd lose our files, too.)
+    1. all folders
+    2. `MathJax.js`
+    3. `LICENSE`
+    
+    (Some of the files in `MathJax-master` have the same names as ones we need in this repo's root, such as `package.json` and `README.md`. Don't overwrite those! This is also why we have edited the list under `notcode` in the Gruntfile, or we'd lose our files, too.)
+
 1. In `Gruntfile.js`, change which lines we've commented out already in the `template` task (lines 324 to 365). You comment out a line to *keep* a component. Anything not commented out gets removed (cleaned) from your offline MathJax.
 1. Run `grunt template`.
+1. Use the MathJax files that remain in the project root for your website.

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mini-mathjax test</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--See https://www.peterkrautzberger.org/0129/ -->
+    <script id="MathJaxConfig" type="text/x-mathjax-config" >
+        MathJax.Hub.Config({
+            jax: ["input/TeX", "output/SVG"],
+            extensions: ["tex2jax.js", "MathEvents.js"],
+            TeX: {
+                extensions: ["noErrors.js", "noUndefined.js", "autoload-all.js"]
+            },
+            MathMenu: {
+                showRenderer: false
+            },
+            menuSettings: {
+                zoom: "Click"
+            },
+            messageStyle: "none",
+            SVG: {
+                blacker: 0,
+                font: "Gyre-Pagella",
+                linebreaks: {
+                    automatic: true,
+                    width: "container"
+                },
+                scale: 90
+            }
+        });
+    </script>
+
+    <script type="text/javascript" src="build/MathJax.js"></script>
+</head>
+
+<body>
+    <h1>Mini-mathJax</h1>
+    <p>See <a href="https://github.com/electricbookworks/mini-mathjax#readme">the GitHub repo</a> for detailed on using grunt to strip down MathJax to its bare essentials. This page only shows a stripped-down MathJax at work.</p>
+    <p>LaTeX-style maths via MathJax can be inline (<script type="math/tex">E = mc^2</script>) or displayed:</p>
+    <script type="math/tex; mode=display">P_{t+1} - P_t=\frac{b+d}{s}(P_t-\overline{P})</script>
+    <p>The maths above and below is borrowed from <a href="https://core-econ.org/the-economy/book/text/leibniz-11-08-01.html"><em>The Economy</em></a> by CORE.</p>
+    <script type="math/tex; mode=display">P_{t+2} - P_{t+1}=\frac{b+d}{s}(P_{t+1}-\overline{P})</script>
+    <p>It follows from <script type="math/tex">P_{t} = \overset{\overline{}}{P} - \frac{s}{b + d}E_{t}</script> , <script type="math/tex">E_{t} = P_{t + 1} - P_{t}</script> and the equation above that</p>
+    <script type="math/tex; mode=display">\frac{P_{t+2} - P_{t+1}}{P_{t+1} - P_{t}}=\frac{P_{t+1}-\overline{P}}{ P_{t}-\overline{P}}=R</script>
+</body>
+
+</html>
